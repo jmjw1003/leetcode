@@ -13,7 +13,7 @@ class Solution:
 """
 Can also be solved with recursion and memoization:
 
-from functools import cache
+from functools import cache  # or in cases like this, use lru_cache as you only need the last 3 values
 
 
 class Solution:
