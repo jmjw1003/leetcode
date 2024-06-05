@@ -1,3 +1,6 @@
+# dummy notebook for testing code snippets
+__.ipynb
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
