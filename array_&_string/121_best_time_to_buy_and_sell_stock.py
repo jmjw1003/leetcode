@@ -1,13 +1,13 @@
 class Solution:
     def maxProfit(self, prices: list[int]) -> int:
-        l, r = 0, 1
-        max_profit = 0
-        while r < len(prices):
-            profit = prices[r] - prices[l]
-            if profit < 0:
-                l = r
-                r += 1
+        max_profit = 0  # Max profit lower bound
+        buy = prices[0] # Set inital buy price
+        # Iterate through prices
+        for price in prices:
+            # Update buy price if lower than current buy price
+            if price < buy:
+                buy = price
+            # Else, calculate sale price & update max_profit
             else:
-                max_profit = max(max_profit, profit)
-                r += 1
+                max_profit = max(price - buy, max_profit)
         return max_profit
