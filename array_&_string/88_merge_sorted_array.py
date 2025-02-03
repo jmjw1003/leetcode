@@ -1,5 +1,26 @@
 class Solution:
+    # Solved this again, seemed more intuitive to go through in order instead
     def merge(self, nums1: list[int], m: int, nums2: list[int], n: int) -> None:
+        """
+        Do not return anything, modify nums1 in-place instead.
+        """
+        ptr = 0
+        while m > 0 and n > 0:
+            if nums1[ptr] > nums2[0]:
+                num = nums2.pop(0)
+                nums1.insert(ptr, num)
+                nums1.pop()
+                n -= 1
+            else:
+                m -= 1
+            ptr += 1
+        
+        while nums2:
+            num = nums2.pop(0)
+            nums1[ptr] = num
+            ptr += 1
+
+    def merge2(self, nums1: list[int], m: int, nums2: list[int], n: int) -> None:
         """
         Do not return anything, modify nums1 in-place instead.
         """
