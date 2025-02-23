@@ -1,5 +1,6 @@
-# dummy notebook for testing code snippets
+# dummy notebook & py for testing code snippets
 __.ipynb
+__.py
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
