@@ -21,3 +21,19 @@ class Solution:
         traverse(root, node_values)
 
         return node_values
+
+    def preorderTraversal(self, root: Optional[TreeNode]) -> List[int]:
+        """Iterative solution."""
+        node_values = []
+        stack = []
+        current_node = root
+        while current_node or stack:
+            if current_node:
+                node_values.append(current_node.val)
+                if current_node.right:
+                    stack.append(current_node.right)
+                current_node = current_node.left
+            else:
+                current_node = stack.pop()
+
+        return node_values
